@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src='./js/database.js'></script>
+    <script defer src='./js/index.js'></script>
+    <title>Título da Página</title>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <h1>Weartake</h1>
+            <!-- </nav> class="container-nav"> -->
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">Todos</a></li>
+                <li class="nav-item"><a href="#">Acessórios</a></li>
+                <li class="nav-item"><a href="#">Calçados</a></li>
+                <li class="nav-item"><a href="#">Camisetas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <ul class="section-list">
+                <li class="section-item">
+                    <img src="./img/jaqueta.svg" alt="jaqueta">
+                    <div>
+                        <span>Camisetas</span>
+                        <h3>Lightweight Jacket</h3>
+                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
+                        <span>R$ 100.00</span>
+                        <button>Adicionar ao carrinho</button>
+                    </div>
+                </li>
+                <li class="section-item">
+                    <img src="./img/camiseta_branca.svg" alt="jaqueta">
+                    <div>
+                        <span>Camisetas</span>
+                        <h3>Lightweight Jacket</h3>
+                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
+                        <span>R$ 100.00</span>
+                        <button>Adicionar ao carrinho</button>
+                    </div>
+                </li>
+                <li class="section-item">
+                    <img src="./img/camiseta_preta.svg" alt="jaqueta">
+                    <div>
+                        <span>Camisetas</span>
+                        <h3>Lightweight Jacket</h3>
+                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
+                        <span>R$ 100.00</span>
+                        <button>Adicionar ao carrinho</button>
+                    </div>
+                </li>
+                <li class="section-item">
+                    <img src="./img/moletom.svg" alt="jaqueta">
+                    <div>
+                        <span>Camisetas</span>
+                        <h3>Lightweight Jacket</h3>
+                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
+                        <span>R$ 100.00</span>
+                        <button>Adicionar ao carrinho</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <aside>
+            <div id="search-bar">
+                <input type="text" name="" id="" placeholder="Digite aqui sua pesquisa">
+                <input type="button" value="Pesquisar">
+            </div>
+            <div id="cart">
+                <div class="cart-title">
+                    <h4>Carrinho de Compras</h4>
+                    <img src="./img/cart.png" alt="carrinho">
+                </div>
+                <div class="empty-list">
+                    <h3>Carrinho Vazio</h3>
+                    <p>Adicione itens</p>
+                </div>
+                <ul class="cart-list scrollbar">
+                    <li class="cart-item">
+                        <img src="./img/camiseta_branca.svg" alt="camiseta_branca">
+                        <div>
+                            <h4>Camisa Branca</h4>
+                            <span>R$ 100.00</span>
+                            <button>Remover produto</button>
+                        </div>
+                    </li>
+                    <li class="cart-item">
+                        <img src="./img/jaqueta.svg" alt="jaqueta">
+                        <div>
+                            <h4>Lightweight Jacket</h4>
+                            <span>R$ 100.00</span>
+                            <button>Remover produto</button>
+                        </div>
+                    </li>
+                    <li class="cart-item">
+                        <img src="./img/camiseta_preta.svg" alt="jaqueta">
+                        <div>
+                            <h4>Lightweight Jacket</h4>
+                            <span>R$ 100.00</span>
+                            <button>Remover produto</button>
+                        </div>
+                    </li>
+                    <li class="cart-item">
+                        <img src="./img/jaqueta.svg" alt="jaqueta">
+                        <div>
+                            <h4>Lightweight Jacket</h4>
+                            <span>R$ 100.00</span>
+                            <button>Remover produto</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="totalizer">
+                    <h4>Quantidade</h4>
+                    <span>3</span>
+                </div>
+                <div class="totalizer">
+                    <h4>Total</h4>
+                    <span>R$ 200,00</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer class="container">
+        <p>Footer&copy;</p>
+    </footer>
+</body>
+
+</html>
