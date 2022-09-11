@@ -12,6 +12,7 @@ let total = 0;
 sectionList.onclick = (event) => {
     if (event.target.tagName == "BUTTON") {
         let normalizeValue = event.path[1].children[3].textContent.substring(2).replace(",", ".");
+        // console.log(typeof(normalizeValue));
         const addProduct = {
             id: event.target.id,
             img: event.path[2].children[0].src,
@@ -20,7 +21,10 @@ sectionList.onclick = (event) => {
         }
 
         dataCart.push(addProduct)
-        console.log(fillCartList(addProduct));
+        fillCartList(addProduct);
+
+
+        // event.path[2].style.transform = 'translateX(280px)';
 
         quantity++;
         quantityDisplay.innerText = quantity;
@@ -114,11 +118,11 @@ function fillCartList(list) {
         </li>
         `
         const item = document.getElementById(`item${list.id}`);
-        /* sleep(200).then(() => {
+        sleep(300).then(() => {
             item.style.transform = 'translateX(0px)';
-        }); */
-
-        // console.log("Carrinho depois da inclusão: ", dataCart);
+        });
+                
+    // console.log("Carrinho depois da inclusão: ", dataCart);
 }
 
 const sleep = milliseconds => {
