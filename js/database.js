@@ -7,7 +7,7 @@ const data = [
     nameItem: "Lightweight Jacket",
     description:
       "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
-    value: 100,
+    value: 100.25,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
   },
@@ -44,7 +44,7 @@ const data = [
   {
     id: 5,
     img: "../img/camiseta_branca.svg",
-    nameItem: "Short-Sleeve T-Shirt",
+    nameItem: "Sleeve T-Shirt",
     description:
       "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
     value: 100,
@@ -54,7 +54,7 @@ const data = [
   {
     id: 6,
     img: "../img/moletom.svg",
-    nameItem: "Champion Packable Jacket",
+    nameItem: "Champion Jacket",
     description:
       "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
     value: 100,

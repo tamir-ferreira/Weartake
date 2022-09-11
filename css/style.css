@@ -17,7 +17,8 @@ color: #F5F5F5; /* grey-05  */
     font-size: 100%;
     font: inherit;
     text-decoration: none;
-    list-style: none
+    list-style: none;
+    cursor: default;
 }
 
 body {
@@ -30,7 +31,7 @@ h2 { font-size: 24px }
 h3 { font-size: 20px }
 h4 { font-size: 16px }
 
-a,p {font-size: 14px; color: #333333 }
+a,p,span, button {font-size: 14px; color: #333333 }
 small { font-size: 10px; color: #333333 } */
 
 h1,h2,h3,h4 { font-weight: bold; color: #333333 }
@@ -46,6 +47,14 @@ button{
     border: none;
     background:none;
     width:fit-content;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: translateX(20px);
+    /* letter-spacing: 2px; */
+    /* font-weight: bold; */
+    color: rgb(173, 0, 0);
 }
 
 .container {
@@ -84,8 +93,8 @@ main{
 /* ------------ SECTION ------------ */
 section{
     width: 75%;
-
 }
+
 .section-list{
     display: flex;
     /* border: 1px solid blue; */
@@ -131,6 +140,7 @@ section{
     padding: 5px;
     font-weight: 200;
 }
+
 .section-item div span{
     color: #2E245E;
     font-weight: 600;
@@ -158,15 +168,17 @@ aside{
     padding: 0 7px;
     border: none;
     font-size: 14px;
-    
+    cursor: pointer;
 }
 
 #search-bar input:first-child{
     padding-left: 15px;
-    background-color: #F5F5F5; /* alterar cor */
+    background-color: #F5F5F5;
     width: 100%;
     border: none;
     font-size: 12px;
+    color: #333333;
+    cursor:text;
 }
 
 #cart{
@@ -203,8 +215,9 @@ aside{
     width: 100%;
     height: 230px;
     overflow-y: scroll;
+    overflow-x: hidden;
     background-color: #F5F5F5;
-    /* display: none; */ /* habilitar se o carrinho estiver vazio */
+    display: none; /* habilitar se o carrinho estiver vazio */
 }
 
 .empty-list{
@@ -216,7 +229,7 @@ aside{
     height: 200px;
     background-color: #F5F5F5;
     gap: 10px;
-    display: none; /* habilitar se o carrinho contiver algum item */
+    /* display: none; */ /* habilitar se o carrinho contiver algum item */
 }
 
 
@@ -226,6 +239,8 @@ aside{
     margin: 2px 5px;
     padding: 5px;
     border-radius: 3px 3px 0 0;
+    /* transform: translateX(-280px); */
+    transition: 0.8s ease;
 }
 
 .cart-item img{
@@ -235,7 +250,7 @@ aside{
 .cart-item div{
     display: flex;
     flex-direction: column;
-    gap:10px
+    gap:10px;
 }
 
 .totalizer{
@@ -245,7 +260,7 @@ aside{
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    /* display: none; */ /* habilitar se o carrinho estiver vazio */
+    display: none; /* habilitar se o carrinho estiver vazio */
 }
 .totalizer:last-child{
     border-radius: 0 0 3px 3px;
