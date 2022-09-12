@@ -92,7 +92,7 @@ button:hover {
 
 .container {
     margin: 0 auto;
-    width: 1200px;
+    max-width: 1200px;
 }
 
 /* ------------ HEADER ------------ */
@@ -307,7 +307,7 @@ aside {
     gap: 10px;
 }
 
-.quantity-item {
+.quantity-items {
     display: flex;
     /* border: 1px solid red; */
     flex-direction: column;
