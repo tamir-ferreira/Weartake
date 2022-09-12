@@ -9,10 +9,20 @@ const data = [
       "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
     value: 100.25,
     addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
+    tag: ["Jaquetas"],
   },
   {
     id: 2,
+    img: "../img/bermuda3.webp",
+    nameItem: "New Soft",
+    description:
+      "Sinta o conforto da NEW SOFT com seu tecido de alta ventilação na parte traseira e elástico anatômico na cintura...",
+    value: 100,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Bermudas"],
+  },
+  {
+    id: 3,
     img: "../img/gorro.svg",
     nameItem: "Black Hat",
     description:
@@ -22,7 +32,17 @@ const data = [
     tag: ["Acessórios"],
   },
   {
-    id: 3,
+    id: 4,
+    img: "../img/bermuda2.webp",
+    nameItem: "Soft Light",
+    description:
+      "Modelo SOFT LIGHT é um novo conceito leve e confortável. com acabamento 100% em DRY, Elástico anatômico e bolsos frontais...",
+    value: 100,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Bermudas"],
+  },
+  {
+    id: 5,
     img: "../img/mascara.svg",
     nameItem: "Mask",
     description:
@@ -32,7 +52,7 @@ const data = [
     tag: ["Acessórios"],
   },
   {
-    id: 4,
+    id: 6,
     img: "../img/camiseta_preta.svg",
     nameItem: "T-Shirt",
     description:
@@ -42,23 +62,33 @@ const data = [
     tag: ["Camisetas"],
   },
   {
-    id: 5,
+    id: 7,
+    img: "../img/moletom.svg",
+    nameItem: "Champion Jacket",
+    description:
+      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliéster...",
+    value: 100,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Jaquetas"],
+  },
+  {
+    id: 8,
     img: "../img/camiseta_branca.svg",
     nameItem: "Sleeve T-Shirt",
     description:
-      "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
+      "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um tecido mais grosso...",
     value: 100,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
   },
   {
-    id: 6,
-    img: "../img/moletom.svg",
-    nameItem: "Champion Jacket",
+    id: 9,
+    img: "../img/bermuda1.webp",
+    nameItem: "Smooth 360",
     description:
-      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
+      "Com um conceito totalmente inovador, Nossa  bermuda 360 abre muitas possibilidades de personalização para sua equipe!",
     value: 100,
     addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
+    tag: ["Bermudas"],
   },
 ];
