@@ -41,7 +41,10 @@ navList.onclick = (event) => {
 
 /* ------- PESQUISAR POR PALAVRA(S) CHAVE --------- */
 buttonSearch.addEventListener('click', itemSearch);
-inputSearch.addEventListener('focusout', itemSearch);
+
+
+
+// inputSearch.addEventListener('focusout', itemSearch);
 
 function itemSearch() {
     listSearch = [];
@@ -52,7 +55,15 @@ function itemSearch() {
         }
     }
     sectionList.innerHTML = '';
-    fillSectionList(listSearch);
+    console.log(listSearch);
+    if (listSearch.length > 0) {
+        fillSectionList(listSearch);
+    } else {
+        // sectionList.style.paddingTop = '100px';
+        // sectionList.innerHTML = '<h3>Produto não Localizado</h3>';
+        sectionList.innerHTML = `<img id='not-found' src='../img/no-product.png' alt='produo não encontrado'/>`;
+        
+    }
 
     inputSearch.value = '';
 }
@@ -109,7 +120,7 @@ cartList.onclick = (event) => {
                 dataCart.splice(i, 1);
                 event.path[3].style.transform = 'translateX(280px)';
 
-                sleep(500).then(() => {
+                sleep(600).then(() => {
                     event.path[3].remove()
                 });
                 break;
@@ -137,7 +148,7 @@ cartList.onclick = (event) => {
                 dataCart[i].amount++;
                 quantityItem.innerText = dataCart[i].amount;
                 quantity++;
-                cartTotal(dataCart)
+                cartTotal(dataCart);
             }
         }
     }
@@ -151,7 +162,7 @@ cartList.onclick = (event) => {
                     dataCart[i].amount--;
                     quantityItem.innerText = dataCart[i].amount;
                     quantity--;
-                    cartTotal(dataCart)
+                    cartTotal(dataCart);
                 }
             }
         }

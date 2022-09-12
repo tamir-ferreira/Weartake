@@ -24,6 +24,7 @@ colors {
     text-decoration: none;
     list-style: none;
     cursor: default;
+    user-select: none;  
 }
 
 body {
@@ -65,8 +66,7 @@ h4 {
 
 a,
 p,
-span,
-button {
+span {
     font-size: 14px;
     color: #333333
 }
@@ -77,17 +77,53 @@ small {
 }
 
 button {
-    border: none;
-    background: none;
+    font-size: 14px;
+    /* color: #333333; */
     width: fit-content;
     cursor: pointer;
+    padding: 1px 5px;
+    border-radius: 7px 0;
+    font-size: 12px;
+    /* border: 1px solid #d6ceff; */
+    border: none;
+    font-weight: 600;
+    background-color: #e6e6e6;
+    
 }
 
 button:hover {
-    transform: translateX(20px);
+    transform: translateX(5px);
     /* letter-spacing: 2px; */
     /* font-weight: bold; */
-    color: rgb(173, 0, 0);
+    border-color: #5744b9;
+    background-color: #9f91e7;
+    /* color: white; */
+    /* box-shadow: 1px 1px 5px black; */
+    transition: 0.5s ease;
+    /* color: rgb(173, 0, 0); */
+
+}
+
+header button {
+    border: 2px solid #d6ceff;
+    /* background: #d6ceff; */
+    /* width: fit-content; */
+    cursor: pointer;
+    padding: 3px 7px;
+    border-radius: 7px 0;
+}
+
+
+header button:hover {
+    /* transform: translateX(20px); */
+    /* letter-spacing: 2px; */
+    /* font-weight: bold; */
+    background: #5744b9;
+    color: white;
+    /* box-shadow: 1px 1px 5px black; */
+    transition: 0.5s ease;
+    /* color: rgb(173, 0, 0); */
+
 }
 
 .container {
@@ -98,7 +134,8 @@ button:hover {
 /* ------------ HEADER ------------ */
 header {
     /* border: 1px solid green; */
-    box-shadow: 1px 1px 15px #828282;
+    box-shadow: 1px 1px 15px #37268C;
+    ;
     /*     position: fixed;
     top: 0; */
     width: 100%;
@@ -134,6 +171,7 @@ section {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
 .section-item {
@@ -149,9 +187,19 @@ section {
 }
 
 .section-item:hover {
+    /* box-shadow: 1px 1px 2px black; */
+    border-right: 2px solid rgb(202, 202, 202);
+    border-bottom: 2px solid rgb(202, 202, 202);
+
+    /* transform: translateY(5px); */
+    /* opacity: 1; */
+    transition: 0.2s linear;
+}
+
+.section-item:hover img {
     /* box-shadow: -2px 2px 5px black; */
-    transform: translateY(5px);
-    opacity: 0.7;
+    transform: translateY(-5px);
+    opacity: 1;
     transition: 0.2s linear;
 }
 
@@ -160,11 +208,14 @@ section {
     height: 150px;
     object-fit: contain;
     background-color: #F5F5F5;
+    opacity: 0.7;
 }
 
 .section-item div {
     display: flex;
+    height: 100%;
     flex-direction: column;
+    justify-content: space-evenly;
     padding: 15px;
     gap: 15px;
 
@@ -181,6 +232,11 @@ section {
 .section-item div span {
     color: #2E245E;
     font-weight: 600;
+}
+
+#not-found{
+    padding-top: 50px;
+    width: 600px;
 }
 
 /* ------------ ASIDE ------------ */
@@ -272,6 +328,10 @@ aside {
     /* habilitar se o carrinho contiver algum item */
 }
 
+.empty-list img{
+    width: 70%;
+}
+
 
 .cart-item {
     display: flex;
@@ -284,6 +344,7 @@ aside {
     height: 85px;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
     /* border: 1px solid green; */
 }
 
@@ -301,27 +362,42 @@ aside {
 }
 
 .product div {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    gap: 10px;
+    justify-content: space-around;
 }
 
 .quantity-items {
     display: flex;
     /* border: 1px solid red; */
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    border: 1px solid #e6e6e6;
+    /* border: 1px solid #e6e6e6; */
     border-radius: 4px;
-    padding: 0 3px;
-    height: 80%;
+
+    height: 100%;
+}
+
+#decrement,
+#increment {
+    background-color: #e6e6e6;
+    width: 100%;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding-bottom: 2px;
 }
 
 #decrement:hover,
 #increment:hover {
     cursor: pointer;
+    /* border: 2 px solid red; */
+    background-color: #9f91e7;
+
 }
 
 .totalizer {

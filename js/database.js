@@ -16,7 +16,7 @@ const data = [
     img: "../img/bermuda3.webp",
     nameItem: "New Soft",
     description:
-      "Sinta o conforto da NEW SOFT com seu tecido de alta ventilação na parte traseira e elástico anatômico na cintura...",
+      "Sinta o conforto da NEW SOFT com seu tecido de alta ventilação na parte traseira e elástico...",
     value: 100,
     addCart: "Adicionar ao carrinho",
     tag: ["Bermudas"],
@@ -36,7 +36,7 @@ const data = [
     img: "../img/bermuda2.webp",
     nameItem: "Soft Light",
     description:
-      "Modelo SOFT LIGHT é um novo conceito leve e confortável. com acabamento 100% em DRY, Elástico anatômico e bolsos frontais...",
+      "Modelo SOFT LIGHT é um novo conceito leve e confortável. com acabamento 100% em DRY...",
     value: 100,
     addCart: "Adicionar ao carrinho",
     tag: ["Bermudas"],
@@ -86,9 +86,10 @@ const data = [
     img: "../img/bermuda1.webp",
     nameItem: "Smooth 360",
     description:
-      "Com um conceito totalmente inovador, Nossa  bermuda 360 abre muitas possibilidades de personalização para sua equipe!",
+      "Com um conceito totalmente inovador, Nossa  bermuda 360 abre muitas possibilidades...",
     value: 100,
     addCart: "Adicionar ao carrinho",
     tag: ["Bermudas"],
   },
+  
 ];
