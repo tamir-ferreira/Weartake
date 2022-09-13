@@ -201,7 +201,7 @@ function fillSectionList(list) {
 function fillCartList(list) {
     cartList.innerHTML +=
         `<li class="cart-item" id='item${list.id}'>
-            <div class="product">
+            <div class="product-desc">
                 <img src=${list.img} alt=${list.nameItem}>
                 <div>
                     <h4>${list.nameItem}</h4>
