@@ -4,8 +4,6 @@ const buttonSearch = document.getElementById('button-search');
 const inputSearch = document.getElementById('input-search');
 const quantityItems = document.querySelector('.quantity-items')
 const cartList = document.querySelector('.cart-list');
-// const decrement = document.getElementById('decrement');
-// const increment = document.getElementById('increment');
 const quantityDisplay = document.getElementById('quantity');
 const totalDisplay = document.getElementById('total');
 const totalizer = document.querySelectorAll('.totalizer');
@@ -15,57 +13,54 @@ let listSearch = [];
 let quantity = 0;
 let total = 0;
 
+/* ------- PREENCHER O MOSTRUÁRIO --------- */
 fillSectionList(data);
 
-inputSearch.onended = () => {
-    console.log('ok')
-    Perform(Wm_NextDlgCtl, 0, 0);
-}
+
 /* ------- FILTRAR POR CATEGORIA DO MOSTRUÁRIO --------- */
 navList.onclick = (event) => {
-    // console.dir(event.target.tagName)
     if (event.target.tagName == 'BUTTON') {
         let filtered = [];
         for (let i = 0; i < data.length; i++) {
-            if (event.target.textContent == data[i].tag[0]) {
-                filtered.push(data[i])
-            }
+            if (event.target.textContent == data[i].tag[0]) filtered.push(data[i])
         }
         sectionList.innerHTML = '';
         fillSectionList(filtered);
-        if (event.target.textContent == "Todos") {
-            fillSectionList(data);
+        if (event.target.textContent == "Todos") fillSectionList(data);
+
+        for (let i = 0; i < 5; i++) {
+            if (event.path[1].id != '') {
+                if (event.path[2].children[i].id == event.path[1].id) {
+                    console.log(event.path[2].children[i].children[0]);
+                    event.path[2].children[i].children[0].classList.add('btn-pressed');
+                } else {
+                    event.path[2].children[i].children[0].classList.remove('btn-pressed');
+                }
+            }
         }
     }
 }
 
+
 /* ------- PESQUISAR POR PALAVRA(S) CHAVE --------- */
 buttonSearch.addEventListener('click', itemSearch);
-
-
-
-// inputSearch.addEventListener('focusout', itemSearch);
+inputSearch.addEventListener('keyup', itemSearch);
 
 function itemSearch() {
     listSearch = [];
     const input = inputSearch.value.toLowerCase();
     for (let i = 0; i < data.length; i++) {
-        if (data[i].nameItem.toLowerCase().indexOf(input) != -1) {
-            listSearch.push(data[i]);
-        }
-    }
-    sectionList.innerHTML = '';
-    console.log(listSearch);
-    if (listSearch.length > 0) {
-        fillSectionList(listSearch);
-    } else {
-        // sectionList.style.paddingTop = '100px';
-        // sectionList.innerHTML = '<h3>Produto não Localizado</h3>';
-        sectionList.innerHTML = `<img id='not-found' src='../img/no-product.png' alt='produo não encontrado'/>`;
-        
+        if (data[i].nameItem.toLowerCase().indexOf(input) != -1) listSearch.push(data[i]);
     }
 
-    inputSearch.value = '';
+    sectionList.innerHTML = '';
+
+    if (listSearch.length > 0) fillSectionList(listSearch);
+    else sectionList.innerHTML = `<img id='not-found' src='../img/no-product.png' alt='produto não encontrado'/>`;
+
+    for (let i = 0; i < 5; i++) {
+        navList.children[i].children[0].classList.remove('btn-pressed');
+    }
 }
 
 
@@ -100,9 +95,7 @@ sectionList.onclick = (event) => {
 /* ------- VERIFICA SE O ITEM JÁ ESTÁ NO CARRINHO --------- */
 function verifyDuplicy(event) {
     for (let i = 0; i < dataCart.length; i++) {
-        if (dataCart[i].id == event.target.id) {
-            return false;
-        }
+        if (dataCart[i].id == event.target.id) return false;
     }
     return true;
 }
@@ -112,16 +105,14 @@ cartList.onclick = (event) => {
 
     /* ------- REMOVER ITENS DO CARRINHO --------- */
     if (event.target.tagName == "BUTTON") {
-
         for (let i = 0; i < dataCart.length; i++) {
-
             if (dataCart[i].id == event.target.id) {
                 quantity -= dataCart[i].amount;
                 dataCart.splice(i, 1);
                 event.path[3].style.transform = 'translateX(280px)';
 
                 sleep(600).then(() => {
-                    event.path[3].remove()
+                    event.path[3].remove();
                 });
                 break;
             }
@@ -141,7 +132,6 @@ cartList.onclick = (event) => {
 
     /* ------- EDITAR QUANTIDADE DE ITENS POR PRODUTO --------- */
     if (event.target.id == "increment") {
-
         for (let i = 0; i < dataCart.length; i++) {
             if (`item${dataCart[i].id}` == event.path[2].id) {
                 const quantityItem = document.getElementById(`display-${dataCart[i].id}`);
@@ -154,7 +144,6 @@ cartList.onclick = (event) => {
     }
 
     if (event.target.id == "decrement") {
-
         for (let i = 0; i < dataCart.length; i++) {
             if (`item${dataCart[i].id}` == event.path[2].id) {
                 if (dataCart[i].amount > 1) {
@@ -169,6 +158,8 @@ cartList.onclick = (event) => {
     }
 }
 
+
+/* ------- CALCULA E EXIBE O TOTAL DO CARRINHO --------- */
 function cartTotal(list) {
     let output = 0;
     for (let i = 0; i < list.length; i++) {
@@ -176,16 +167,15 @@ function cartTotal(list) {
     }
     quantityDisplay.innerText = quantity;
     totalDisplay.innerText = 'R$ ' + output.toFixed(2).replace(".", ",");
-    // return output.toFixed(2).replace(".", ",");
-
 }
 
 
+/* ------- PREENCHER O MOSTRUÁRIO --------- */
 function fillSectionList(list) {
     for (let i = 0; i < list.length; i++) {
         sectionList.innerHTML +=
             `<li class="section-item">
-             <img src=${list[i].img} alt='${list[i].nameItem}' title='${list[i].nameItem}'>
+             <img src=${list[i].img} alt='${list[i].nameItem}'/>
                 <div>
                     <span>${list[i].tag}</span>
                     <h3>${list[i].nameItem}</h3>
@@ -198,11 +188,13 @@ function fillSectionList(list) {
     }
 }
 
+
+/* ------- PREENCHER O CARRINHO --------- */
 function fillCartList(list) {
     cartList.innerHTML +=
         `<li class="cart-item" id='item${list.id}'>
             <div class="product-desc">
-                <img src=${list.img} alt=${list.nameItem}>
+                <img src=${list.img} alt='${list.nameItem}'/>
                 <div>
                     <h4>${list.nameItem}</h4>
                     <span>R$ ${list.value.toFixed(2).replace(".", ",")}</span>
@@ -220,26 +212,10 @@ function fillCartList(list) {
     sleep(300).then(() => {
         item.style.transform = 'translateX(0px)';
     });
-
-    // console.log("Carrinho depois da inclusão: ", dataCart);
 }
 
+
+/* ------- PAUSA O SCRIPT --------- */
 const sleep = milliseconds => {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 };
-
-/* `<li class="cart-item" id='item${list.id}'>
-            <div class='products'>
-                <img src=${list.img} alt=${list.nameItem}>
-                <div class='description-item'>
-                    <h4>${list.nameItem}</h4>
-                    <span>R$ ${list.value.toFixed(2).replace(".", ",")}</span>
-                    <button id=${list.id} >Remover produto</button>
-                </div>
-            </div>    
-            <div class='quantity-item'>
-                <span>+</span>
-                <span>0</span>
-                <span>-</span>
-            </div>
-        </li> */

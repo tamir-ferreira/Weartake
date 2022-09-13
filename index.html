@@ -10,69 +10,28 @@
     <link rel="stylesheet" href="./css/style.css">
     <script defer src='./js/database.js'></script>
     <script defer src='./js/index.js'></script>
-    <title>Weartake E-commerce</title>
+    <title>Weartake Moda Fashion</title>
 </head>
 
 <body>
     <header>
         <nav class="container">
             <h1>Weartake</h1>
-            <!-- </nav> class="container-nav"> -->
             <ul class="nav-list">
-                <li class="nav-item"><button>Todos</button></li>
-                <li class="nav-item"><button>Acessórios</button></li>
-                <li class="nav-item"><button>Bermudas</button></li>
-                <li class="nav-item"><button>Camisetas</button></li>
-                <li class="nav-item"><button>Jaquetas</button></li>
+                <li class="nav-item" id="todos"><button>Todos</button></li>
+                <li class="nav-item" id="acessorios"><button>Acessórios</button></li>
+                <li class="nav-item" id="bermudas"><button>Bermudas</button></li>
+                <li class="nav-item" id="camisetas"><button>Camisetas</button></li>
+                <li class="nav-item" id="jaquetas"><button>Jaquetas</button></li>
             </ul>
         </nav>
     </header>
     <main class="container">
         <section>
             <ul class="section-list">
-                <!--        <li class="section-item">
-                    <img src="./img/jaqueta.svg" alt="jaqueta">
-                    <div>
-                        <span>Camisetas</span>
-                        <h3>Lightweight Jacket</h3>
-                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
-                        <span>R$ 100.00</span>
-                        <button>Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="section-item">
-                    <img src="./img/camiseta_branca.svg" alt="jaqueta">
-                    <div>
-                        <span>Camisetas</span>
-                        <h3>Lightweight Jacket</h3>
-                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
-                        <span>R$ 100.00</span>
-                        <button>Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="section-item">
-                    <img src="./img/camiseta_preta.svg" alt="jaqueta">
-                    <div>
-                        <span>Camisetas</span>
-                        <h3>Lightweight Jacket</h3>
-                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
-                        <span>R$ 100.00</span>
-                        <button>Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="section-item">
-                    <img src="./img/moletom.svg" alt="jaqueta">
-                    <div>
-                        <span>Camisetas</span>
-                        <h3>Lightweight Jacket</h3>
-                        <p>Adicione um pouco de energia ao seu guarda roupa de inverno com esta jaqueta vibrante...</p>
-                        <span>R$ 100.00</span>
-                        <button>Adicionar ao carrinho</button>
-                    </div>
-                </li> -->
+                <!-- RENDERIZADO PELO JS -->
             </ul>
         </section>
-
         <aside>
             <div id="search-bar" aria-required="true">
                 <input id="input-search" type="text" placeholder="Digite aqui sua pesquisa">
@@ -85,42 +44,10 @@
                 </div>
                 <div class="empty-list">
                     <img src="./img/emptycart.png" alt="carrinho vazio">
-                    <!-- <h3>Carrinho Vazio</h3> -->
                     <p>Que tal adicionar algum produto?</p>
                 </div>
                 <ul class="cart-list scrollbar">
-                    <!-- <li class="cart-item">
-                        <img src="./img/camiseta_branca.svg" alt="camiseta_branca">
-                        <div>
-                            <h4>Camisa Branca</h4>
-                            <span>R$ 100.00</span>
-                            <button>Remover produto</button>
-                        </div>
-                    </li>
-                    <li class="cart-item">
-                        <img src="./img/jaqueta.svg" alt="jaqueta">
-                        <div>
-                            <h4>Lightweight Jacket</h4>
-                            <span>R$ 100.00</span>
-                            <button>Remover produto</button>
-                        </div>
-                    </li>
-                    <li class="cart-item">
-                        <img src="./img/camiseta_preta.svg" alt="jaqueta">
-                        <div>
-                            <h4>Lightweight Jacket</h4>
-                            <span>R$ 100.00</span>
-                            <button>Remover produto</button>
-                        </div>
-                    </li>
-                    <li class="cart-item">
-                        <img src="./img/jaqueta.svg" alt="jaqueta">
-                        <div>
-                            <h4>Lightweight Jacket</h4>
-                            <span>R$ 100.00</span>
-                            <button>Remover produto</button>
-                        </div>
-                    </li> -->
+                    <!-- RENDERIZADO PELO JS -->
                 </ul>
                 <div class="totalizer">
                     <h4>Quantidade Total</h4>
@@ -131,10 +58,13 @@
                     <span id="total">R$ 0,00</span>
                 </div>
             </div>
+            <div id="symbol">
+                <span>W</span>
+            </div>
         </aside>
     </main>
-    <footer class="container">
-        <!-- <p>Footer&copy;</p> -->
+    <footer>
+        <small>Kenzie Academy - Projeto de conclusão M1, utilizado HTML | CSS | JS - 14/09/22 - Tamir S. Ferreira&copy;</small>
     </footer>
 </body>
 
